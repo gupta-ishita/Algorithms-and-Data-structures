@@ -30,16 +30,16 @@ class MinHeap
         //Inserts new element into the min-heap
         
         heapsize = heapsize + 1;
-        heap[heapsize-1] = val;
-        int i = (int)Math.floor(heapsize/2) - 1;
-        int j = heapsize-1;
-        while(i>=0 && heap[i]>heap[j])
+        int child = heapsize - 1;
+        int parent = (child - 1)/2;
+        heap[child] = val;
+        while(parent>=0 && heap[parent]>heap[child])
         {
-            int temp = heap[i];
-            heap[i] = heap[j];
-            heap[j] = temp;
-            j = i;
-            i = (int)Math.floor(i/2) - 1;
+            int temp = heap[parent];
+            heap[parent] = heap[child];
+            heap[child] = temp;
+            child = parent;
+            parent = (parent - 1)/2;
         }
     }
     
