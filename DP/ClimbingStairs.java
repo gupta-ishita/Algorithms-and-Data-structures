@@ -42,7 +42,9 @@ class ClimbingStairs
         System.out.println("Enter number of steps");
         int input = sc.nextInt();
         int dp[] = new int[input+1];
+              
         System.out.println("No. of ways : " + countWays_TD(input, dp));
+              
         System.out.println("No. of ways : " + countWays_BU(input));
     }
 }
