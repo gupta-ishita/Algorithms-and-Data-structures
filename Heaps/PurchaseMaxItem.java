@@ -22,6 +22,7 @@ class PurchaseMaxItem
              Builds heap from the given collection of costs -->  TC : O(n)  */
         
         int count = 0;
+        
         while(sum > 0 && pq.peek() <= sum)  // peek() returns min element from the heap ---> TC : O(1)
         {
             count++;
@@ -36,7 +37,8 @@ class PurchaseMaxItem
     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        List<Integer> cost = new ArrayList<Integer>(n);        
+        List<Integer> cost = new ArrayList<Integer>(n); 
+        
         for(int i=0; i<n; i++)
         {
             cost.add(sc.nextInt());
