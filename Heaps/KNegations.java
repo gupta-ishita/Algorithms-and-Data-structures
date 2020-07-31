@@ -16,14 +16,17 @@ class KNegations
     public static int negateK(List<Integer> list, int k)
     {
         Queue<Integer> heap = new PriorityQueue<Integer>(list); // Creates heap of size N --> TC : O(N)
+      
         while(k > 0 && heap.peek()!=0)
         {
             int val = heap.poll();  // Extracts minimum element --> TC : O(log N)
             heap.add(-val);   // Inserts the modified element --> TC : O(log N)
             k--;
         }
+      
         int sum = 0;
         Iterator<Integer> iter = heap.iterator();
+      
         while(iter.hasNext())  // Iterates through the heap --> TC : O(N)
         {
             sum = sum + iter.next();
@@ -33,6 +36,7 @@ class KNegations
         //            : O(klogN)
         return sum;
     }
+  
     public static void main(String[] X)
     {
         Scanner sc = new Scanner(System.in);
