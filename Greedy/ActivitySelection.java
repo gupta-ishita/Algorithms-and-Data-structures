@@ -15,6 +15,8 @@ Solution : Take the greedy approach. Sort the jobs in increasing order of end ti
            select the next job if its start time is greater than the end time of 
            previously selected job and increment the counter by 1.
 */
+
+
 import java.util.*;
 class Activity
 {
@@ -35,9 +37,9 @@ class ActivitySort implements Comparator<Activity>
         return a.end - b.end;
     }
 }
+
 class ActivitySelection 
-{
-    
+{    
     public static int maximumActivity(Activity list[])
     {
         Arrays.sort(list, new ActivitySort()); // Sorts the array of activities  ---> TC : O(nlog n)
@@ -54,6 +56,7 @@ class ActivitySelection
         // Overall TC : O(nlogn) + O(n) = O(nlogn)
         return count;
     }
+  
     public static void main(String[] X)
     {
         Scanner sc = new Scanner(System.in);
